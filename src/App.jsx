@@ -1,22 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const RegistrationForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form Submitted:', formData);
-  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#0081a7] p-4">
@@ -25,7 +9,7 @@ const RegistrationForm = () => {
           Registration Form
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form className="space-y-4">
           {/* Name Field */}
           <input
             type="text"
@@ -33,7 +17,6 @@ const RegistrationForm = () => {
             placeholder="Name*"
             required
             className="w-full p-4 bg-gray-200 border-none rounded-lg focus:ring-2 focus:ring-[#0081a7] outline-none transition-all"
-            onChange={handleChange}
           />
 
           {/* Email Field */}
@@ -43,7 +26,6 @@ const RegistrationForm = () => {
             placeholder="Email*"
             required
             className="w-full p-4 bg-gray-200 border-none rounded-lg focus:ring-2 focus:ring-[#0081a7] outline-none transition-all"
-            onChange={handleChange}
           />
 
           {/* Phone Field */}
@@ -53,7 +35,6 @@ const RegistrationForm = () => {
             placeholder="Phone*"
             required
             className="w-full p-4 bg-gray-200 border-none rounded-lg focus:ring-2 focus:ring-[#0081a7] outline-none transition-all"
-            onChange={handleChange}
           />
 
           {/* Subject Dropdown */}
@@ -61,7 +42,6 @@ const RegistrationForm = () => {
             name="subject"
             required
             className="w-full p-4 bg-gray-200 border-none rounded-lg focus:ring-2 focus:ring-[#0081a7] outline-none transition-all appearance-none text-gray-600"
-            onChange={handleChange}
           >
             <option value="" disabled selected>Subject*</option>
             <option value="BCA">BCA</option>
@@ -76,7 +56,6 @@ const RegistrationForm = () => {
             required
             rows="1"
             className="w-full p-4 bg-gray-200 border-none rounded-lg focus:ring-2 focus:ring-[#0081a7] outline-none transition-all resize-none"
-            onChange={handleChange}
           ></textarea>
 
           {/* Submit Button */}
